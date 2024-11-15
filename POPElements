@@ -1,0 +1,21 @@
+import java.util.Stack;
+
+class POPElements {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        
+        int popElement1 = stack.pop();
+        System.out.println("Popped Element " + popElement1);
+        
+        int popElement2 = stack.pop();
+        System.out.println("Popped Element " + popElement2);
+        
+        int popElement3 = stack.pop();
+        System.out.println("Popped Element " + popElement3);
+        
+    }
+}
