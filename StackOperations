@@ -1,0 +1,20 @@
+import java.util.Stack;
+
+class Main {
+    public static void main(String[] args) {
+        Stack<Integer>  stack = new Stack<>();
+        
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        
+        int poppedElement = stack.pop();
+        System.out.println("Popped Element " + poppedElement);
+        
+        int peekElement = stack.peek();
+        System.out.println("Peek Element " + peekElement);
+        
+        boolean IsEmpty = stack.isEmpty();
+        System.out.println("is Empty stack " + IsEmpty);
+    }
+}
