@@ -1,0 +1,28 @@
+import java.util.Stack;
+
+ class Main {
+    public static boolean areParenthesesBalanced(String expression) {
+        Stack<Character> stack = new Stack<>();
+        for (char ch : expression.toCharArray()) {
+            if (ch == '(' || ch == '[' || ch == '{') {
+                stack.push(ch);
+            } else if (ch == ')' || ch == ']' || ch == '}') {
+                if (stack.isEmpty() || !areMatching(stack.pop(), ch)) {
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    private static boolean areMatching(char left, char right) {
+        return (left == '(' && right == ')') || (left == '[' && right == ']') || (left == '{' && right == '}');
+    }
+
+    public static void main(String[] args) {
+        String expression1 = "{[()]}";
+        String expression2 = "([)]";
+        System.out.println("Expression 1 is balanced: " + areParenthesesBalanced(expression1));
+        System.out.println("Expression 2 is balanced: " + areParenthesesBalanced(expression2));
+    }
+}
