@@ -1,0 +1,21 @@
+import java.util.Stack;
+
+class PEEK {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        
+        stack.push(1);
+        stack.push(2);
+        stack.push(3);
+        
+        int peekElement1 = stack.peek();
+        System.out.println("Popped Element " + peekElement1);
+        
+        int peekElement2 = stack.peek();
+        System.out.println("Popped Element " + peekElement2);
+        
+        int peekElement3 = stack.peek();
+        System.out.println("Popped Element " + peekElement3);
+        
+    }
+}
