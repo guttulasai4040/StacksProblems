@@ -1,0 +1,51 @@
+import java.util.Stack;
+
+public class MinStack {
+    private Stack<Integer> mainStack;
+    private Stack<Integer> minStack;
+
+    public MinStack() {
+        mainStack = new Stack<>();
+        minStack = new Stack<>();
+    }
+
+    public void push(int x) {
+        mainStack.push(x);
+        if (minStack.isEmpty() || x <= minStack.peek()) {
+            minStack.push(x);
+        }
+    }
+
+    public void pop() {
+        if (!mainStack.isEmpty()) {
+            if (mainStack.peek().equals(minStack.peek())) {
+                minStack.pop();
+            }
+            mainStack.pop();
+        }
+    }
+
+    public int top() {
+        if (!mainStack.isEmpty()) {
+            return mainStack.peek();
+        }
+        throw new IllegalStateException("Stack is empty.");
+    }
+
+    public int getMin() {
+        if (!minStack.isEmpty()) {
+            return minStack.peek();
+        }
+        throw new IllegalStateException("Stack is empty.");
+    }
+
+    public static void main(String[] args) {
+        MinStack stack = new MinStack();
+        stack.push(3);
+        stack.push(5);
+        stack.push(2);
+        System.out.println("Min: " + stack.getMin());
+        stack.pop();
+        System.out.println("Top: " + stack.top());
+    }
+}
