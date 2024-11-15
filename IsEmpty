@@ -1,0 +1,15 @@
+import java.util.Stack;
+
+class IsEmpty {
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        
+        
+        
+        boolean IsEmpty = stack.isEmpty();
+        System.out.println("Is empty:  " + IsEmpty);
+        
+        
+        
+    }
+}
